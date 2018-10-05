@@ -26,10 +26,13 @@ public class Lt03_Mat10 {
     }
     
     static void exibirMatrizSoma(int mt[][]){
+        long soma = 0;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 System.out.println("M[" + i + "][" + j +  "]" + " = " + mt[i][j]);
+                soma += mt[i][j];
             }
         }
+        System.out.println(soma);
     }
 }
