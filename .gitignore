@@ -5,6 +5,7 @@
 /RegistroLogico/nbproject/private/
 /RegistroLogico/build/
 /ExercicioInstanciaRegistro/nbproject/private/
+<<<<<<< HEAD
 /ExercicioInstanciaRegistro/build/
 /RegistroLogicoAcidentes/nbproject/private/
 /Prj_ManipulaArquivo/nbproject/private/
@@ -15,3 +16,6 @@
 /Prj_ManipulaDados/nbproject/private/
 /Prj_ManipulaDados/build/
 /Prj_Votacao/nbproject/private/
+=======
+/ExercicioInstanciaRegistro/build/
+>>>>>>> db8eec809ff15178519c5547ca1f27f423101fe1
