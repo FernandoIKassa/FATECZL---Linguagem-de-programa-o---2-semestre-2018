@@ -6,18 +6,31 @@
 
 /**
  *
- * @author Lab 102
+ * @author Issao
  */
 public class teste {
+
     public static void main(String[] args) {
-        Transito[] transito = new Transito[1];
-        transito[0].codigoRegiao = 1;
-        transito[0].nro_acidentes = 123;
-        transito[0].qtd_veiculos = 5000;
-        transito[0].tipo_veiculo = 5;
-        
-        
-        
-        System.out.println(transito[0].codigoRegiao);
+        int[] vet = new int[1000];
+        for (int i = 0; i < vet.length; i++) {
+            vet[i] = (int) (Math.random() * 1000);
+            System.out.println(vet[i]);
+        }
+
+        for (int i = 0; i < vet.length; i++) {
+            int aux = 0;
+            for (int j = 0; j < vet.length - 1; j++) {
+                if (vet[j] > vet[j + 1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
+            
+        }
+        System.out.println("\n");
+        for (int i = 0; i < vet.length; i++) {
+            System.out.println(vet[i]);
+        }
     }
 }

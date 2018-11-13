@@ -57,35 +57,95 @@ public class Metodos {
 
     }
 
-    
-    // SEPARAR O CALCULAR DA MÉDIA DO MOSTRAR MÉDIA OU NÃO???????????
-    
     void mostraMediaRegiao(Transito[] transito) {
 
-        int[] acidente = new int[4];
-        int[] media = new int[4];
+        int[] acidente = new int[5];
+        int[] media = new int[5];
 
-        System.out.println("                Média de acidentes por tipo de veículo em relação a todas as regiões");
+        System.out.println("                Média de acidentes de todas as regiões");
 
-        for (int i = 0; i < 4; i++) {
-            System.out.print(tipoVeiculo(i) + "             ");
+        for (int i = 0; i < acidente.length; i++) {
+            System.out.print(regiao(i) + "             ");
         }
 
         System.out.println("\n");
 
         for (int i = 0; i < transito.length; i++) {
-
-            for (int j = 0; j < 4; j++) {
-                if (transito[i].tipo_veiculo == j) {
+            for (int j = 0; j < acidente.length; j++) {
+                if (regiao(transito[i].codigoRegiao) == regiao(j)) {
                     acidente[j] += transito[i].nro_acidentes;
                 }
             }
-
         }
 
         for (int i = 0; i < acidente.length; i++) {
-            media[i] = acidente[i] / 5;
-            System.out.print("      " + media[i] + "                       ");
+            media[i] = acidente[i] / 4;
+            System.out.print("  " + media[i] + "              ");
+        }
+
+        System.out.println("\n\n");
+
+        int mediaDeTodasRegioes = 0;
+        for (int i = 0; i < media.length; i++) {
+            mediaDeTodasRegioes += media[i];
+        }
+        mediaDeTodasRegioes /= media.length;
+        System.out.println("Média de todas as regiões: " + mediaDeTodasRegioes);
+
+        //Bubble sort das médias
+        /*for (int i = 0; i < media.length; i++) {
+            int aux = 0;
+            for (int j = 0; j < media.length - 1; j++) {
+                if (media[j] > media[j + 1]) {
+                    aux = media[j];
+                    media[j] = media[j + 1];
+                    media[j + 1] = aux;
+                }
+            }
+        }*/
+        //Carrega Mostra quem esta abaixo/acima da média ou igual a ela
+        int[] abaixoMedia = new int[media.length];
+        int[] igualMedia = new int[media.length];
+        int[] acimaMedia = new int[media.length];
+
+        for (int i = 0; i < media.length; i++) {
+
+            int ctaAbaixo = 0;
+            int ctaIgual = 0;
+            int ctaAcima = 0;
+
+            if (media[i] < mediaDeTodasRegioes) {
+                abaixoMedia[ctaAbaixo] = media[i];
+                ctaAbaixo++;
+            } else if (media[i] == mediaDeTodasRegioes) {
+                igualMedia[ctaIgual] = media[i];
+                ctaIgual++;
+            } else if (media[i] > mediaDeTodasRegioes) {
+                acimaMedia[ctaAcima] = media[i];
+                ctaAcima++;
+            }
+        }
+
+        System.out.println("Valores abaixo da média: ");
+        for (int i = 0; i < abaixoMedia.length; i++) {
+            
+            System.out.print(abaixoMedia[i] + " ");
+        }
+        
+        System.out.println("\n");
+        
+        System.out.println("Valores igual à média: ");
+        for (int i = 0; i < igualMedia.length; i++) {
+            
+            System.out.print(igualMedia[i] + " ");
+        }
+        
+        System.out.println("\n");
+        
+        System.out.println("Valores acima da média: ");
+        for (int i = 0; i < acimaMedia.length; i++) {
+            
+            System.out.print(acimaMedia[i] + " ");
         }
 
     }

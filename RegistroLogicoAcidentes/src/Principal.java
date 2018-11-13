@@ -13,7 +13,7 @@
                     3) Gerar indicadores com:
                         
                         - Descrição a região, código, número de acidentes
-                        - Média de acidentes de todas as regiões para cada tipo de veículo
+                        - Média de acidentes de todas as regiões
                         - Relações nas quais a quantidade de acidentes sejam menores e maiores que a média
 
  */
