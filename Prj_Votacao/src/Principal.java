@@ -33,16 +33,6 @@ Criar classe Votação2016, conforme:
 4.3) Quantidade de votos por candidato (procedimento);
 4.4) Exibir os 10 candidatos mais votados e suas quantidades (procedimento);
 
-
-
-
-
-
-
-
-
-
-
 ----------------------------------------------------------------
 |	SISTEMA DE VOTAÇÃO			|
 |      1 – Carregar Seção/Número Eleitor  	|
@@ -61,7 +51,56 @@ Criar classe Votação2016, conforme:
 |  4 – 10 primeiros colocadas (nro  cand. e qtd votos )  |
 |  9 – Finaliza consulta	                		            |
 ------------------------------------------------------------------------
-*/
+ */
+
+ /*
+Carrega
+Classifica
+Gravar
+Mostrar
+ */
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 public class Principal {
-    
+
+    public static void main(String[] args) throws IOException {
+
+        ManipulaMetodos manMet = new ManipulaMetodos();
+        Votacao2018[] votacao = new Votacao2018[100];
+        
+        for (int i = 0; i < votacao.length ; i++) {
+            votacao[i] = new Votacao2018();
+        }
+        
+        int opc = 0;
+
+        while (opc != 9) {
+            opc = Integer.parseInt(JOptionPane.showInputDialog("1 - Carrega Seção/Número do Eleitor "
+                    + "\n 2 - Classificar por Seção"
+                    + "\n 3 - Gravar registros"
+                    + "\n 4 - Mostra Indicadores"
+                    + "\n 9 - Finalizar"));
+            switch (opc) {
+                case 1:
+                    votacao = manMet.cadastraVotacao(votacao);
+                    break;
+                case 2:
+                    manMet.classficaSecao(votacao);
+                    break;
+                    
+                case 3:
+                    manMet.gravaRegistro(votacao);
+                    break;
+                    
+                case 9:
+                    JOptionPane.showMessageDialog(null, "Finalizado!");
+                    break;
+                    
+                default:
+                    JOptionPane.showMessageDialog(null, "CÓDIGO INVÁLIDO!");
+                    break;
+            }
+        }
+    }
 }

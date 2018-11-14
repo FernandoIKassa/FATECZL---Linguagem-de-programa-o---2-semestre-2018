@@ -108,11 +108,11 @@ public class Metodos {
         int[] igualMedia = new int[media.length];
         int[] acimaMedia = new int[media.length];
 
-        for (int i = 0; i < media.length; i++) {
+        int ctaAbaixo = 0;
+        int ctaIgual = 0;
+        int ctaAcima = 0;
 
-            int ctaAbaixo = 0;
-            int ctaIgual = 0;
-            int ctaAcima = 0;
+        for (int i = 0; i < media.length; i++) {
 
             if (media[i] < mediaDeTodasRegioes) {
                 abaixoMedia[ctaAbaixo] = media[i];
@@ -128,24 +128,34 @@ public class Metodos {
 
         System.out.println("Valores abaixo da média: ");
         for (int i = 0; i < abaixoMedia.length; i++) {
-            
-            System.out.print(abaixoMedia[i] + " ");
+            if (abaixoMedia[i] == 0) {
+                System.out.print("");
+            } else {
+                System.out.print(abaixoMedia[i] + " ");
+            }
+
         }
-        
+
         System.out.println("\n");
-        
+
         System.out.println("Valores igual à média: ");
         for (int i = 0; i < igualMedia.length; i++) {
-            
-            System.out.print(igualMedia[i] + " ");
+            if (igualMedia[i] == 0) {
+                System.out.print("");
+            } else {
+                System.out.print(igualMedia[i] + " ");
+            }
         }
-        
+
         System.out.println("\n");
-        
+
         System.out.println("Valores acima da média: ");
         for (int i = 0; i < acimaMedia.length; i++) {
-            
-            System.out.print(acimaMedia[i] + " ");
+            if (acimaMedia[i] == 0) {
+                System.out.print("");
+            } else {
+                System.out.print(acimaMedia[i] + " ");
+            }
         }
 
     }
