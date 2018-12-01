@@ -67,12 +67,13 @@ public class Principal {
     public static void main(String[] args) throws IOException {
 
         ManipulaMetodos manMet = new ManipulaMetodos();
+        IndicadoresMetodos indMet = new IndicadoresMetodos();
         Votacao2018[] votacao = new Votacao2018[100];
-        
-        for (int i = 0; i < votacao.length ; i++) {
+
+        for (int i = 0; i < votacao.length; i++) {
             votacao[i] = new Votacao2018();
         }
-        
+
         int opc = 0;
 
         while (opc != 9) {
@@ -88,17 +89,21 @@ public class Principal {
                 case 2:
                     manMet.classficaSecao(votacao);
                     break;
-                    
+
                 case 3:
                     manMet.gravaRegistro(votacao);
                     break;
-                    
-                case 9:
-                    JOptionPane.showMessageDialog(null, "Finalizado!");
+
+                case 4:
+                    indMet.mostraIndicador(votacao);
                     break;
-                    
+
+                case 9:
+                    JOptionPane.showMessageDialog(null, "Finalizado");
+                    break;
+
                 default:
-                    JOptionPane.showMessageDialog(null, "CÓDIGO INVÁLIDO!");
+                    JOptionPane.showMessageDialog(null, "*** CÓDIGO INVÁLIDO! ***");
                     break;
             }
         }

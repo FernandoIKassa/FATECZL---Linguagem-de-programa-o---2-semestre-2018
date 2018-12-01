@@ -21,9 +21,9 @@ class LerAluno {
             aluno[i].pontos = Integer.parseInt(ler.readLine());
         }
 
-        for (i = 0; i < 3; i++) {
-            System.out.println(aluno[i].pnome + " " + aluno[i].unome + " pontos: " + aluno[i].pontos);
-        }
+//        for (i = 0; i < 3; i++) {
+//            System.out.println(aluno[i].pnome + " " + aluno[i].unome + " pontos: " + aluno[i].pontos);
+//        }
         ler.close();
         System.exit(0);
     } // fim do método	
